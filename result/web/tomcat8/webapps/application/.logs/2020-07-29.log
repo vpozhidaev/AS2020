@@ -1,0 +1,12 @@
+00:36:08.613	SERVER	admin	OK	Server was started (port: 11984).
+00:36:17.123	127.0.0.1:60078	admin	REQUEST	[GET] /application/
+00:36:17.644	127.0.0.1:60078	admin	400	Stopped at D:/Чемпионат atomskills/web/tomcat8/webapps/application/WEB-INF/xq/data.xq, 3/52: [XQST0059] Imported module 'util.xq' has unexpected namespace: 'urn:rir:account:util' vs 'urn:atomskills:util'.	523.4 ms
+00:37:18.836	127.0.0.1:60091	admin	REQUEST	[GET] /application/
+00:37:18.840	127.0.0.1:60091	admin	400	Stopped at D:/Чемпионат atomskills/web/tomcat8/webapps/application/WEB-INF/xq/data.xq, 3/52: [XQST0059] Imported module 'util.xq' has unexpected namespace: 'urn:rir:account:util' vs 'urn:atomskills:util'.	4.41 ms
+00:39:08.382	127.0.0.1:60104	admin	REQUEST	[GET] /application/
+00:39:08.456	127.0.0.1:60104	admin	400	Stopped at D:/Чемпионат atomskills/web/tomcat8/webapps/application/WEB-INF/xq/fragments.xq, 3/52: [XQST0059] Imported module 'data.xq' has unexpected namespace: 'urn:rir:account:data' vs 'urn:atomskills:data'.	74.86 ms
+00:40:54.163	127.0.0.1:60131	admin	REQUEST	[GET] /application/
+00:40:54.214	127.0.0.1:60131	admin	400	Stopped at D:/Чемпионат atomskills/web/tomcat8/webapps/application/WEB-INF/xq/file-upload.xq, 29/21: [XPST0081] No namespace declared for 'upload:uploadAvatar'.	51.67 ms
+00:41:27.802	127.0.0.1:60141	admin	REQUEST	[GET] /application/
+00:41:27.875	127.0.0.1:60141	admin	404	No function found that matches the request.	72.32 ms
+00:46:14.682	SERVER	admin	OK	Server was stopped (port: 11984).

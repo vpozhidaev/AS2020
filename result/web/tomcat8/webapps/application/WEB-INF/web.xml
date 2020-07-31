@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app xmlns="http://xmlns.jcp.org/xml/ns/javaee"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://www.oracle.com/webfolder/technetwork/jsc/xml/ns/javaee/web-app_4_0.xsd"
+	version="4.0">
+
+	<display-name>AtomSkills</display-name>
+	<description>HTTP Services</description>
+  <session-config>
+    <session-timeout>1440</session-timeout>
+  </session-config>
+	<context-param>
+		<param-name>org.basex.port</param-name>
+		<param-value>12349</param-value>
+	</context-param>
+
+	<context-param>
+		<param-name>org.basex.serverport</param-name>
+		<param-value>12349</param-value>
+	</context-param>
+	
+	<context-param>
+	  <param-name>org.basex.logpath</param-name>
+	  <param-value>../../logs</param-value>
+	</context-param>
+
+	<!-- Global session and servlet listener -->
+	<listener>
+		<listener-class>org.basex.http.SessionListener</listener-class>
+	</listener>
+	<listener>
+		<listener-class>org.basex.http.ServletListener</listener-class>
+	</listener>
+	<listener>
+		<listener-class>application.ContextListener</listener-class>
+	</listener>
+	<!-- <filter> <filter-name>CorsFilter</filter-name> <filter-class>org.apache.catalina.filters.CorsFilter</filter-class> 
+		</filter> <filter-mapping> <filter-name>CorsFilter</filter-name> <url-pattern>/*</url-pattern> 
+		</filter-mapping> -->
+
+
+
+
+	<!-- RESTXQ Service (can be disabled by removing this entry) -->
+	<servlet>
+		<servlet-name>RESTXQ</servlet-name>
+		<servlet-class>org.basex.http.restxq.RestXqServlet</servlet-class>
+		<init-param>
+			<param-name>org.basex.user</param-name>
+			<param-value>admin</param-value>
+		</init-param>
+		<load-on-startup>1</load-on-startup>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>RESTXQ</servlet-name>
+		<url-pattern>/*</url-pattern>
+	</servlet-mapping>
+
+<filter>
+    <filter-name>LoginFilter</filter-name>
+    <filter-class>application.LoginFilter</filter-class>
+</filter>
+ 
+<filter-mapping>
+    <filter-name>LoginFilter</filter-name>
+    <servlet-name>RESTXQ</servlet-name>
+</filter-mapping>
+
+	<!-- Mapping for static resources (may be restricted to a sub path) -->
+	<servlet>
+		<servlet-name>default</servlet-name>
+		<init-param>
+			<param-name>useFileMappedBuffer</param-name>
+			<param-value>false</param-value>
+		</init-param>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>default</servlet-name>
+		<url-pattern>/static/*</url-pattern>
+	</servlet-mapping>
+
+</web-app>

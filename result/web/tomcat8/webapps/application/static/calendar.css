@@ -1,0 +1,98 @@
+.Calendar_Input {
+	position: relative
+}
+
+.Calendar_Input input {
+	border-color: #bdc3c7;
+	cursor: pointer;
+	padding-left: 2.4em !important;
+	background: #fff
+		url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 14 16' fill='Silver'><path d='M13 2h-1v1.5c0 .28-.22.5-.5.5h-2c-.28 0-.5-.22-.5-.5V2H6v1.5c0 .28-.22.5-.5.5h-2c-.28 0-.5-.22-.5-.5V2H2c-.55 0-1 .45-1 1v11c0 .55.45 1 1 1h11c.55 0 1-.45 1-1V3c0-.55-.45-1-1-1zm0 12H2V5h11v9zM5 3H4V1h1v2zm6 0h-1V1h1v2zM6 7H5V6h1v1zm2 0H7V6h1v1zm2 0H9V6h1v1zm2 0h-1V6h1v1zM4 9H3V8h1v1zm2 0H5V8h1v1zm2 0H7V8h1v1zm2 0H9V8h1v1zm2 0h-1V8h1v1zm-8 2H3v-1h1v1zm2 0H5v-1h1v1zm2 0H7v-1h1v1zm2 0H9v-1h1v1zm2 0h-1v-1h1v1zm-8 2H3v-1h1v1zm2 0H5v-1h1v1zm2 0H7v-1h1v1zm2 0H9v-1h1v1z' /></svg>")
+		0/contain no-repeat
+}
+
+.Calendar_Input .Calendar {
+	position: absolute;
+	z-index: 5
+}
+
+.Calendar {
+	background: #fff;
+	box-shadow: 0 1px 8px rgba(0, 0, 0, .25);
+	width: 280px;
+	text-align: center;
+	-webkit-user-select: none;
+	-moz-user-select: none;
+	-ms-user-select: none;
+	user-select: none;
+	font-weight: 400
+}
+
+.Cr-Days, .Cr-Head, .Cr-Week {
+	display: flex
+}
+
+.Cr-Head, .Cr-Week {
+	font-weight: 700
+}
+
+.Cr-Week {
+	line-height: 2em
+}
+
+.Cr-Week_day {
+	width: 40px
+}
+
+.Cr-Head {
+	background: rgba(155, 77, 202, .2);
+	justify-content: space-between;
+	line-height: 40px
+}
+
+.Cr-Head_current {
+	flex: 1
+}
+
+.Cr-Head_gtMonth, .Cr-Head_ltMonth {
+	color: #fff;
+	background: #9b4dca;
+	cursor: pointer;
+	width: 40px
+}
+
+.Cr-Head_gtMonth:hover, .Cr-Head_ltMonth:hover {
+	background: #a55fcf
+}
+
+.Cr-Days {
+	flex-wrap: wrap;
+	line-height: 40px
+}
+
+.Cr-Days_blank, .Cr-Days_day {
+	width: 40px
+}
+
+.Cr-Days_blank {
+	color: #dee2e6
+}
+
+.Cr-Days_day {
+	cursor: pointer;
+	border-radius: 50%
+}
+
+.Cr-Days_day:hover:not (.Today ):not (.clickedDay ){
+	background: #dee2e6
+}
+
+.Cr-Days .Today {
+	background: #f0f8ff
+}
+
+.Cr-Days .clickedDay {
+	color: #fff;
+	font-weight: 700;
+	background: #9b4dca
+}
